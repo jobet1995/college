@@ -1,5 +1,6 @@
 from django import forms
-from .models.emergency import Emergency
+from .models import Emergency
+
 
 class EmergencyForm(forms.ModelForm):
     class Meta:
