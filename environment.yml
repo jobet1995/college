@@ -1,0 +1,40 @@
+name: Update Conda Environment
+
+on: [push]
+
+jobs:
+  update-environment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10
+
+    - name: Install Miniconda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        python-version: 3.10
+
+    - name: Update Conda Environment
+      run: conda env update --name django-template --file environment.yml --name base
+
+    - name: base
+      channels:
+        - defaults
+        - conda-forge
+      dependencies:
+        - python=3.10
+        - django=5.0
+        - django-cms=3.11.1
+        - wagtail=2.15.0
+        - flask=2.2.0
+        - pandas=1.3.4
+        - numpy=1.22.4
+        - scikit-learn=1.0.2
+        - pip
+          pip:
+            - r requirements.txt
