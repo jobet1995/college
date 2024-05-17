@@ -1,5 +1,6 @@
 from django.db import models
 from course.models import Course
+from emergency_contact.models import Emergency
 
 
 class BaseModel(models.Model):
@@ -55,6 +56,7 @@ class Enrollment(BaseModel):
     course_taken = models.TextField(max_length=255)
     academic_year_last_attended = models.TextField(max_length=255)
     college_achievement = models.TextField(max_length=255)
+    emergency = models.ForeignKey(Emergency, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'

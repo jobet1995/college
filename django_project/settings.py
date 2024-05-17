@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "course",
-    "emergency_contact"
+    "emergency_contact",
+    "enrollment"
 ]
 
 MIDDLEWARE = [
