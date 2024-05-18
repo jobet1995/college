@@ -2,7 +2,7 @@ FROM python:3.9-alpine
 
 ENV PYTHONestic 1
 
-COPY requirements.txt
+COPY requirements.txt .
 
 RUN apk add --no-cache --virtual .build-deps \
     ca-certificates gcc linux-headers musl-dev \
