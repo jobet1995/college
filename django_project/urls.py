@@ -22,8 +22,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     re_path(r'^api/collegeApi/$', views.college_list),
-    re_path(r'^api/collegeApi/([0-9])$', views.college_details),
-    path('student/', views.student, name='student'),
-    path('parents/', views.parents, name='parents'),
-    path('blog/', views.blog, name='blog')
+    re_path(r'^api/collegeApi/([0-9])$', views.college_details)
 ]
