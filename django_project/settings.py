@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "emergency_contact",
     "enrollment",
     "parent",
-    "department"
+    "department",
+    "instructors"
 ]
 
 MIDDLEWARE = [

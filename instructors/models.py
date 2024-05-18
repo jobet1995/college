@@ -20,7 +20,7 @@ class Instructor(BaseModel):
     first_name = models.CharField(max_length=255, null=False)
     middle_initial = models.CharField(max_length=255, null=True)
     last_name = models.CharField(max_length=255, null=False)
-    gender = models.CharField(choices=gender)
+    gender = models.CharField(choices=gender, max_length=255)
     birtdate = models.DateField()
     age = models.IntegerField()
     email = models.EmailField()
