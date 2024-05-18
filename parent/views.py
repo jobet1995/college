@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Parent, FinancialInformation
 from .serializer import ParentSerializer, FinancialInformationSerializer
+from .forms import ParentForm, FinancialInformationForm
 
 
 @api_view(['GET', 'POST'])
@@ -15,8 +16,12 @@ def parent_list(request):
         return Response(serializer.data)
     elif request.method == 'POST':
         serializer = ParentSerializer(data=request.data)
+        form = ParentForm(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+        elif form.is_valid():
+            form.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -34,8 +39,12 @@ def parent_details(request, pk):
     elif request.method == 'PUT':
         serializer = ParentSerializer(
             parent, data=request.data, context={'request': request})
+        form = ParentForm(parent, data=request.data)
         if serializer.is_valid():
             serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        elif form.is_valid():
+            form.is_valid()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
@@ -54,8 +63,12 @@ def financial_list(request):
         return Response(serializer.create)
     elif request.method == 'POST':
         serializer = FinancialInformationSerializer(data=request.data)
+        form = FinancialInformationForm(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+        elif form.is_valid():
+            form.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -71,8 +84,12 @@ def financial_list(request, pk):
         return Response(serializer.create)
     elif request.method == 'POST':
         serializer = FinancialInformationSerializer(data=request.data)
+        form = FinancialInformationForm(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            return Response(status=status.HTTP_201_CREATED)
+        elif form.is_valid():
+            form.save()
             return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -93,8 +110,12 @@ def financial_details(request, pk):
             data=request.data,
             context={'request': request}
         )
+        form = FinancialInformationForm(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        elif form.is_valid():
+            form.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
