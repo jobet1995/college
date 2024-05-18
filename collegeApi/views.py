@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import collegeApi
 from .serializers import collegeApiSerializer
-# Create your views here.
+from django.http import HttpResponse
 
 
 @api_view(['GET', 'POST'])
@@ -46,3 +46,11 @@ def college_details(request, pk):
     elif request.method == 'DELETE':
         college.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def index(request):
+    data = collegeApi.objects.all()
+    serializer = collegeApiSerializer(
+        data, context={'request': request}, many=True)
+    return Response(serializer.data)
