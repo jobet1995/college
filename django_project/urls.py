@@ -19,7 +19,7 @@ from django.urls import path, re_path
 from collegeApi import views
 
 urlpatterns = [
-    path('/', views.index, name='index'),
+    path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     re_path(r'^api/collegeApi/$', views.college_list),
     re_path(r'^api/collegeApi/([0-9])$', views.college_details)
