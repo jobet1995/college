@@ -1,6 +1,7 @@
 from django.db import models
 from course.models import Course
 from emergency_contact.models import Emergency
+from parent.models import Parent
 # Create your models here.
 
 
