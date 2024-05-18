@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [".replit.dev", ".replit.app",
 CSRF_TRUSTED_ORIGINS = ["https://*.replit.dev",
                         "https://*.replit.app", "https://k58t62-3000.csb.app", "http://k58t62-8000.csb.app"]
 
+CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
