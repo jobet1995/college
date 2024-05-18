@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "corsheaders",
     "course",
     "emergency_contact",
-    "emergency",
     "enrollment",
     "parent",
     "department",
