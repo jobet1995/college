@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include 'base/header.html' %}
+
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+        {% include 'base/sidebar.html' %}
+        <div class="container-fluid">
+            <main class="main">
+                <div class="animated fadeIn py-4">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+        {% include 'base/footer.html' %}
+    </body>
+</html>
