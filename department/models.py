@@ -1,5 +1,7 @@
 from django.db import models
 
+# Create your models here.
+
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -9,7 +11,6 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Subject(BaseModel):
-    subject_name = models.CharField(max_length=255)
-    subject_code = models.CharField(max_length=255)
-    schedule = models.CharField(max_length=255)
+class Department(BaseModel):
+    department_name = models.CharField(max_length=255)
+    description = models.TextField()
