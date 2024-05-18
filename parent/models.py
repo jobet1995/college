@@ -10,4 +10,6 @@ class BaseModel(models.Model):
 
 
 class Parent(BaseModel):
-    first_name = models.CharField()
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    job = models.CharField(max_length=255)
