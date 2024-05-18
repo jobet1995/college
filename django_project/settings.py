@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "enrollment",
     "parent",
     "department",
-    "instructors"
+    "instructors",
+    "collegeApi",
+    "subjects",
 ]
 
 MIDDLEWARE = [

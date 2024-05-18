@@ -8,7 +8,7 @@ from .serializers import collegeApiSerializer
 
 
 @api_view(['GET', 'POST'])
-def college_api_list(request):
+def college_list(request):
     if request.method == 'GET':
         data = collegeApi.objects.all()
         serializer = collegeApiSerializer(
@@ -24,7 +24,7 @@ def college_api_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def college_api_details(request, pk):
+def college_details(request, pk):
     try:
         college = collegeApi.objects.get(pk=pk)
     except collegeApi.DoesNotExist:

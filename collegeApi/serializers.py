@@ -3,9 +3,9 @@ from .models import collegeApi
 from course.models import Course
 from emergency_contact.models import Emergency
 from parent.models import Parent
-from instructor.models import Instructor
+from instructors.models import Instructor
 from enrollment.models import Enrollment
-from subject.models import Subject
+from subjects.models import Subject
 
 
 class collegeApiSerializer(serializers.ModelSerializer):

@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from course import views
+from collegeApi import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/course/$', views.course_list),
-    re_path(r'^api/course/([0-9])$', views.course_detail)
+    re_path(r'^api/college/$', views.college_list),
+    re_path(r'^api/college/([0-9])$', views.college_details)
 ]
