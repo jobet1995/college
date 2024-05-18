@@ -25,9 +25,10 @@ SECRET_KEY = 'django-insecure-4ju2n@$f9d0c=h)_g0lbb%k9&@rf(xa$d$g$&5ri$uf)*gev^4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".replit.dev", ".replit.app", "k58t62-3000.csb.app"]
+ALLOWED_HOSTS = [".replit.dev", ".replit.app",
+                 "k58t62-3000.csb.app", "k58t62-8000.csb.app"]
 CSRF_TRUSTED_ORIGINS = ["https://*.replit.dev",
-                        "https://*.replit.app", "https://k58t62-3000.csb.app"]
+                        "https://*.replit.app", "https://k58t62-3000.csb.app", "http://k58t62-8000.csb.app"]
 
 # Application definition
 
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "course",
     "emergency_contact",
-    "enrollment"
+    "enrollment",
+    "parent"
 ]
 
 MIDDLEWARE = [

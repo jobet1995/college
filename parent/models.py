@@ -34,12 +34,10 @@ class Parent(BaseModel):
     zip_code = models.CharField(max_length=10)
 
     def __str__(self):
-        return f{self.first_name} {self.last_name}
+        return self.first_name
 
 
 class FinancialInformation(BaseModel):
-    print("Financial Information")
-    print("Are you a dependent of your Parents?")
     YES_NO_CHOICES = [
         (True, "Yes"),
         (False, "No")
@@ -54,4 +52,4 @@ class FinancialInformation(BaseModel):
     information = models.TextField()
 
     def __str__(self):
-        return f{information.self}
+        return self.working
