@@ -20,6 +20,6 @@ from collegeApi import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^api/college/$', views.college_list),
-    re_path(r'^api/college/([0-9])$', views.college_details)
+    re_path(r'^api/collegeApi/$', views.college_list),
+    re_path(r'^api/collegeApi/([0-9])$', views.college_details)
 ]
