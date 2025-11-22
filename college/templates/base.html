@@ -31,6 +31,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert2.min.css' %}">
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/college.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/layouts/navbar.css' %}">
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -40,6 +41,8 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+        {% include "layouts/navbar.html" %}
+
         {% block content %}{% endblock %}
 
         {# JQUery #}
@@ -48,6 +51,7 @@
         <script type="text/javascript" src="{% static 'js/sweetalert2.min.js' %}"></script>
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/college.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/layouts/navbar.js' %}"></script>
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}

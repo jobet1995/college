@@ -402,6 +402,13 @@ input, textarea, select {
   width: 100%;
 }
 
+/* Header logo centering */
+.header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 input:focus, textarea:focus, select:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
